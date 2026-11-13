@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesh Viewer</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="viewport"></div>
+
+    <aside id="panel">
+      <h1>Mesh Viewer</h1>
+
+      <section>
+        <h2>Samples</h2>
+        <div class="row" id="samples">
+          <button data-url="models/DamagedHelmet.glb">Damaged Helmet</button>
+          <button data-url="models/Fox.glb">Fox</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Open file</h2>
+        <label class="file">
+          <input type="file" id="file-input" multiple
+            accept=".glb,.gltf,.bin,.obj,.mtl,.fbx,.stl,.ply,.png,.jpg,.jpeg,.webp,.ktx2" />
+          Choose files…
+        </label>
+        <p class="hint">Or drag &amp; drop anywhere. For .gltf / .obj with external textures, drop all the files together.</p>
+      </section>
+
+      <section id="anim-section" hidden>
+        <h2>Animation</h2>
+        <select id="anim-select"></select>
+      </section>
+
+      <section>
+        <h2>View</h2>
+        <label class="check"><input type="checkbox" id="opt-wire" /> Wireframe</label>
+        <label class="check"><input type="checkbox" id="opt-grid" checked /> Grid</label>
+        <label class="check"><input type="checkbox" id="opt-env" checked /> Environment lighting</label>
+        <label class="check"><input type="checkbox" id="opt-rotate" /> Auto-rotate</label>
+        <button id="btn-frame">Reframe camera</button>
+      </section>
+
+      <section>
+        <h2>Info</h2>
+        <pre id="info">Nothing loaded.</pre>
+      </section>
+
+      <section class="credits">
+        <h2>Credits</h2>
+        <p><b>Fox</b>: model by PixelMannen (CC0), rigging &amp; animation by tomkranis
+          (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>),
+          glTF conversion by AsoboStudio &amp; scurest (CC BY 4.0).</p>
+        <p><b>Damaged Helmet</b>: by theblueturtle_
+          (<a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>),
+          rebuild by ctxwing (CC BY 4.0).</p>
+        <p>Via <a href="https://github.com/KhronosGroup/glTF-Sample-Assets">Khronos glTF Sample Assets</a>.</p>
+      </section>
+    </aside>
+
+    <div id="drop-overlay">Drop to load</div>
+    <div id="status"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
